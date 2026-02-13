@@ -1,0 +1,8 @@
+[tool.ruff.lint]
+ignore = [
+    "E741",  # ambiguous variable name (e.g. l)
+    "E731",  # do not assign lambda
+]
+
+[tool.pyright]
+typeCheckingMode = "off"
