@@ -93,3 +93,38 @@ where \(W_1\), \(W_2\) are `mlp_fc1` and `mlp_fc2`. Hidden size is 4×n_embd (GP
 ## Persistence
 
 `load_checkpoint()` and `save_checkpoint()` read/write JSON. `state_dict` values are plain floats; `Value` objects are reconstructed on load for autograd.
+
+---
+
+## Index
+
+| Term | Meaning |
+|------|---------|
+| **Adam** | Optimizer that adapts learning rate per parameter using moving averages of gradients; commonly used in transformer training (Kingma & Ba, 2015). |
+| **Attention** | Mechanism that lets each token attend to others; computes weighted sums of values based on query–key similarity. |
+| **Autograd** | Automatic differentiation—computes gradients for backpropagation without manual derivatives. |
+| **BOS** | Beginning of Sequence; special token prepended to inputs to mark the start. |
+| **block_size** | Maximum context length (tokens the model can attend to). |
+| **Cross-entropy** | Loss that measures how well predicted probabilities match targets; \(-\log p(\text{target})\). |
+| **Embedding** | Dense vector representation of a discrete token or position; learned lookup. |
+| **head_dim** | Dimension of each attention head; typically `n_embd / n_head`. |
+| **Key (K)** | Projection of input used to compare against queries; relevance scoring. |
+| **LayerNorm** | Normalizes activations per layer; RMSNorm is a simplified variant (no bias, no affine). |
+| **lm_head** | Final linear layer mapping hidden states to vocabulary logits (unembedding). |
+| **Logits** | Raw model outputs before softmax; higher values ⇒ higher probability. |
+| **MLP** | Multi-layer perceptron; feedforward sublayer inside each transformer block (FFN). |
+| **n_embd** | Embedding dimension; size of hidden vectors throughout the model. |
+| **n_head** | Number of parallel attention heads in multi-head attention. |
+| **n_layer** | Number of transformer blocks stacked. |
+| **Query (Q)** | Projection of input used to compute attention scores against keys. |
+| **ReLU** | Rectified Linear Unit; \(\max(0, x)\); injects non-linearity. |
+| **Residual** | Skip connection; adds block input to output so gradients flow directly. |
+| **RMSNorm** | Root Mean Square normalization; scales by \(1/\sqrt{\text{mean}(x^2)}\). |
+| **Softmax** | Converts logits to a probability distribution; exponentiates and normalizes. |
+| **state_dict** | Dictionary of all trainable parameters (weights, biases). |
+| **Token** | Discrete unit of text; here a single character. |
+| **Token ID** | Integer index into the vocabulary for a token. |
+| **Value (V)** | Projection of input combined via attention weights to produce output. |
+| **Vocabulary** | Set of all tokens the model can represent; size = token count + 1 (BOS). |
+| **wpe** | Position embedding; encodes token position in the sequence. |
+| **wte** | Token (word) embedding; maps token IDs to vectors. |
